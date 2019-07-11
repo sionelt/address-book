@@ -39,7 +39,11 @@ describe('fetch people', () => {
   }
 
   it('fetch all people', async () => {
-    const mockGetResponse = { data: [mockPerson] }
+    const mockGetResponse = {
+      data: {
+        people: [mockPerson],
+      },
+    }
 
     mockAxios.get.mockImplementationOnce(() => Promise.resolve(mockGetResponse))
 
@@ -50,7 +54,11 @@ describe('fetch people', () => {
 
   it('fetch one person by id', async () => {
     const { id: personId } = mockPerson
-    const mockGetResponse = { data: mockPerson }
+    const mockGetResponse = {
+      data: {
+        person: mockPerson,
+      },
+    }
 
     mockAxios.get.mockImplementationOnce(() => Promise.resolve(mockGetResponse))
 
