@@ -1,4 +1,5 @@
 require('colors')
+const path = require('path')
 const cors = require('cors')
 const express = require('express')
 
@@ -8,6 +9,7 @@ const app = express()
 const HTTP_PORT = 8080
 
 app.use(cors())
+app.use(express.static(path.join(__dirname, './data')))
 
 app.get('/api/people/:id', PeopleCntrl.getPersonById)
 app.get('/api/people', PeopleCntrl.getAllPeople)

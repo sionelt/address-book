@@ -1,4 +1,3 @@
-
 const path = require('path')
 
 const peopleBlob = require(path.join(__dirname, '../data/people.json'))
@@ -14,7 +13,7 @@ function getPersonById(req, res) {
     res.sendStatus(404)
   } else {
     res.json({
-      person: pfiltered[0],
+      person: filtered[0],
     })
   }
 }
@@ -23,11 +22,12 @@ function getAllPeople(req, res) {
   const peopleList = people.map(({ id, name }) => ({ id, name }))
 
   res.json({
-    people: peopleList,
+    people: peopleList
+    // people: Array(100).fill().map((p, i) => ({ ...peopleList[0], id: i, name: peopleList[0].name + i })),
   })
 }
 
 module.exports = {
   getAllPeople,
-  getPersonById
+  getPersonById,
 }
