@@ -1,0 +1,17 @@
+.profile_container {
+  flex: 1;
+}
+
+.profile_photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 60%;
+}
+
+.profile_section {
+  margin-bottom: 3em;
+}
+
+.profile_table_main_col{
+  width: 200px;
+}
